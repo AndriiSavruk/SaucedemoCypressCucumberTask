@@ -16,4 +16,8 @@ clickLoginButton() {
 checkFailedMessage(message) {
     cy.get(failedMessage).should('have.text',message);
 }
+
+checkIfLoginButtonIsVisible() {
+    cy.get(loginButton).should('be.visible');
+}
 }

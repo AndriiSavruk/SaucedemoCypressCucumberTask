@@ -3,33 +3,25 @@ import { LoginPage } from "../../../pages/loginpage";
 
 const loginPage = new LoginPage();
 
-Given('The user opens the login page', () => {
-  cy.visit('/');
-})
-
-When("The user fills in username field with {string}", (username) => {
- loginPage.typeUsername(username);
+Given("The user opens the login page", () => {
+  cy.visit("/");
 });
 
-When("The user provides invalid credentials", (table) => {
-  table.hashes().forEach( row => {
+When("The user provides credentials", (table) => {
+  table.hashes().forEach((row) => {
     loginPage.typeUsername(row.username);
     loginPage.typePassword(row.password);
-  })
-})
-
-When("The user fills in password field with {string}", (password) => {
-  loginPage.typePassword(password);
-})
+  });
+});
 
 When("The user clicks on the Login button", () => {
   loginPage.clickLoginButton();
-})
+});
 
 Then("The user is on the inventory page", () => {
-  cy.url().should('contain','inventory.html');
-})
+  cy.url().should("contain", "inventory.html");
+});
 
 Then("The user receives {string} message", (errorMessage) => {
   loginPage.checkFailedMessage(errorMessage);
-})
+});
