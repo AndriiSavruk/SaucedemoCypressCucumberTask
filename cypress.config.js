@@ -16,7 +16,6 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     specPattern: "cypress/e2e/bdd-cucumber/features/*.feature",
     watchForFileChanges:false,
-    chromeWebSecurity: false,
     experimentalModifyObstructiveThirdPartyCode: true,
     defaultCommandTimeout: 10000
     },
