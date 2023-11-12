@@ -5,6 +5,7 @@ const burgerMenu = ".bm-menu";
 const shoppingCartBage = ".shopping_cart_badge";
 const sortContainer = '[data-test="product_sort_container"]';
 const productsContainer = "#inventory_container";
+const cartLink = '.shopping_cart_link';
 
 export class InventoryPage {
   clickOnNavigationMenuButton() {
@@ -46,5 +47,9 @@ export class InventoryPage {
 
   checkIfFirstInProductBlock(name) {
     cy.get(productsContainer).children(1).should('contain', name);
+  }
+
+  clickOnCartIcon() {
+    cy.get(cartLink).click();
   }
 }
