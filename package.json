@@ -4,7 +4,10 @@
   "description": "Cypress and Cucumber",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"
+    "tests-headed": "cypress open",
+    "tests": "cypress run",
+    "tests-chrome": "npx cypress run --browser chrome",
+    "tests-headed-chrome": "npx cypress run --headed --browser chrome"
   },
   "repository": {
     "type": "git",
